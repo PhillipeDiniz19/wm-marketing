@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Obrigado</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary-color: #A00BD3;
+            --secondary-color: #f4f4f4;
+            --text-color: #333;
+            --footer-bg: #000;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            background-color: #000000;
+            background-image: url(./assets/fundosite.png);
+            background-size: cover;
+            background-position: center; /* Centraliza a imagem de fundo */
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 120px; 
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .logo img:hover {
+            transform: scale(1.1); 
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+            .logo img {
+                width: 100px; /* Ajusta a largura da logo para telas pequenas */
+            }
+        }
+
+        h1 {
+            color: white;
+            font-size: 2em;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 15px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 20px;
+            font-size: 1em;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+            margin-top: 15px;
+        }
+
+        /* Responsividade do botão */
+        @media (max-width: 768px) {
+            .btn {
+                font-size: 0.9em;
+                padding: 10px 18px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="./assets/logo-empresa.png" alt="Logo da Empresa">
+    </div>
+    <div class="content">
+        <h1>Cadastro <span>Concluído!</span></h1>
+        <p>Nos próximos minutos, o nosso time de especialistas entrará em <br> contato com você para entender melhor o seu negócio e saber se <br> realmente podemos te ajudar a acelerar suas vendas.</p>
+        <a href="index.html" class="btn">Voltar para a página inicial</a>
+    </div>
+</body>
+</html>
