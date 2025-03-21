@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -40,27 +38,31 @@
                     <div class="step">
                         <h3>Passo 1</h3>
                         <h4>Complete o formulário</h4>
-                        <p>Forneça suas informações de contato. Garantimos total segurança e privacidade dos seus dados, que serão utilizados exclusivamente para entrarmos em contato com você.
+                        <p>Forneça suas informações de contato. Garantimos total segurança e privacidade dos seus dados,
+                            que serão utilizados exclusivamente para entrarmos em contato com você.
                         </p>
                     </div>
                     <div class="step">
                         <h3>Passo 2</h3>
                         <h4>Receba uma ligação personalizada</h4>
-                        <p>Em até 8 horas, um de nossos especialistas entrará em contato para agendar a reunião que pode transformar os resultados do seu negócio.</p>
+                        <p>Em até 8 horas, um de nossos especialistas entrará em contato para agendar a reunião que pode
+                            transformar os resultados do seu negócio.</p>
                     </div>
                 </div>
             </div>
-            <form action="https://api.staticforms.xyz/submit" method="post">
+            <form id="form" action="https://api.staticforms.xyz/submit" method="post">
                 <input type="hidden" name="accessKey" value="3ece3fa3-c37b-41ee-997a-0bdac2128113">
                 <input type="hidden" name="email">
                 <input type="hidden" name="subject" value="Novo contato do site!">
                 <input type="hidden" name="redirectTo" value="https://wmmarketing.vercel.app/obrigado.html">
+
                 <input type="text" name="name" placeholder="Seu nome" required>
                 <input type="email" name="email" placeholder="Seu melhor e-mail" required>
                 <input type="tel" name="phone" placeholder="Telefone" required>
                 <input type="text" name="company" placeholder="Nome da empresa" required>
-                <input type="text" name="investment" placeholder="Quanto você investe em marketing mensalmente?" required>
-            
+                <input type="text" name="investment" placeholder="Quanto você investe em marketing mensalmente?"
+                    required>
+
                 <select name="revenue" required>
                     <option value="" disabled selected>Qual o seu faturamento mensal?</option>
                     <option value="Até 30 mil">Até 30 mil</option>
@@ -71,25 +73,30 @@
                     <option value="De 301 mil até 500 mil">De 301 mil até 500 mil</option>
                     <option value="Mais de 500 mil">Mais de 500 mil</option>
                 </select>
-            
+
                 <!-- Campo oculto para armazenar todos os dados personalizados -->
                 <input type="hidden" name="message" id="message">
-            
+
                 <button class="button-29" role="button" type="submit">Receber mais informações</button>
             </form>
-            
+
             <script>
-            document.getElementById("form").addEventListener("submit", function(event) {
-                var company = document.querySelector('input[name="company"]').value;
-                var investment = document.querySelector('input[name="investment"]').value;
-                var revenue = document.querySelector('select[name="revenue"]').value;
-            
-                document.getElementById("message").value = `Empresa: ${company} | Investimento: ${investment} | Faturamento: ${revenue}`;
-            });
+                document.getElementById("form").addEventListener("submit", function (event) {
+                    var company = document.querySelector('input[name="company"]').value;
+                    var investment = document.querySelector('input[name="investment"]').value;
+                    var revenue = document.querySelector('select[name="revenue"]').value;
+
+                    // Preenche o campo message com os dados adicionais
+                    document.getElementById("message").value = `Empresa: ${company} | Investimento: ${investment} | Faturamento: ${revenue}`;
+
+                    // Certifique-se de que a função de envio continue
+                    return true;
+                });
             </script>
-            
-            
-            
+
+
+
+
 
         </div>
     </section>
@@ -155,7 +162,8 @@
     <section class="exclusive-work">
         <div class="content-box">
             <h2>O nosso trabalho é <span>exclusivo</span> e as vagas para novos parceiros são limitadas.</h2>
-            <p>Não perca a oportunidade de receber uma assessoria de crescimento com uma das equipes mais especializadas do mercado.</p>
+            <p>Não perca a oportunidade de receber uma assessoria de crescimento com uma das equipes mais especializadas
+                do mercado.</p>
             <a href="#formulario"><button class="button-29" role="button">Agende já uma reunião</button></a>
         </div>
     </section>
