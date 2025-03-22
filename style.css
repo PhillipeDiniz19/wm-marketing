@@ -54,7 +54,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #FFD700;
+    color: var(--accent-color);
 }
 
 nav button {
