@@ -59,7 +59,7 @@ nav a:hover {
 
 nav button {
     background-color: var(--accent-color);
-    color: var(--primary-color);
+    color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -173,7 +173,7 @@ nav button:hover {
     border-radius: 6px;
     box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
     box-sizing: border-box;
-    color: black;
+    color: white;
     cursor: pointer;
     display: inline-flex;
     height: 48px;
@@ -229,7 +229,7 @@ form {
 
 .formulario button {
     width: 100%;
-    color: black;
+    color: white;
     padding: 15px 40px;
     border: none;
     border-radius: 8px;
@@ -320,7 +320,7 @@ form {
 }
 
 .o-que-faremos h3 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .o-que-faremos ul {
@@ -340,6 +340,9 @@ form {
     color: var(--accent-color);
     margin-right: 15px;
     font-size: 1.5rem;
+}
+.o-que-faremos-item{
+    text-align: left;
 }
 
 /* Footer */
@@ -391,7 +394,8 @@ footer {
 
 .footer-right {
     display: flex;
-    gap: 20px;
+    gap: 40px;
+    flex-direction: row;
 }
 
 .footer-right i {
@@ -415,10 +419,11 @@ footer {
     .form-container {
         text-align: center;
         grid-template-columns: 1fr;
-        padding: 20px;
     }
 
-
+    .button-green{
+        margin-bottom: 20px;
+    }
 
     .food-icons {
         display: none;
