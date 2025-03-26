@@ -11,30 +11,32 @@
     <link rel="icon" href="./assets/367705260_2689158384587072_773718416974673324_n.jpg" type="image/png">
     <!-- Código do pixel do Facebook -->
     <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '979530064105527');
         fbq('track', 'PageView');
         fbq('track', 'ViewContent');
         fbq('track', 'CompleteRegistration');
         fbq('track', 'Lead')
-        </script>
-        <noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=979530064105527&ev=PageView&noscript=1"
-        /></noscript>
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=979530064105527&ev=PageView&noscript=1" /></noscript>
     <!-- Fim do código do pixel do Facebook -->
     <title>WM MARKETING</title>
 </head>
 
 <body>
     <header>
-        <img src="./assets/logo-empresa.png" alt="Logo da Empresa">
+        <img id="logo" src="./assets/logo-empresa.png" alt="Logo da Empresa">
         <nav>
             <a href="#depoimentos">Depoimentos</a>
             <a href="#clientes">Clientes</a>
@@ -70,13 +72,20 @@
                     </div>
                 </div>
             </div>
-            <form action="https://formspree.io/f/xanebgak?redirect=https://www.assessoriawise.com.br/obrigado.html" method="POST">
+            <form id="form" action="https://api.staticforms.xyz/submit" method="post">
+                <input type="hidden" name="accessKey" value="3ece3fa3-c37b-41ee-997a-0bdac2128113">
+                <input type="hidden" name="email">
+                <input type="hidden" name="subject" value="Novo contato do site!">
+                <input type="hidden" name="redirectTo" value="https://assessoriawise.com.br/obrigado.html">
+
                 <input type="text" name="name" placeholder="Seu nome" required>
                 <input type="email" name="email" placeholder="Seu melhor e-mail" required>
-                <input type="tel" name="Telefone" placeholder="Telefone" required>
-                <input type="text" name="Nome da empresa" placeholder="Nome da empresa" required>
-                <input type="text" name="investimento" placeholder="Quanto você investe em marketing mensalmente?" required>
-                <select name="Faturamento" required>
+                <input type="tel" name="phone" placeholder="Telefone" required>
+                <input type="text" name="company" placeholder="Nome da empresa" required>
+                <input type="text" name="investment" placeholder="Quanto você investe em marketing mensalmente?"
+                    required>
+
+                <select name="revenue" required>
                     <option value="" disabled selected>Qual o seu faturamento mensal?</option>
                     <option value="Até 30 mil">Até 30 mil</option>
                     <option value="De 31 mil até 50 mil">De 31 mil até 50 mil</option>
@@ -86,12 +95,40 @@
                     <option value="De 301 mil até 500 mil">De 301 mil até 500 mil</option>
                     <option value="Mais de 500 mil">Mais de 500 mil</option>
                 </select>
-            
-                <button type="submit" class="button-29">Receber mais informações</button>
+                <input type="hidden" name="message" id="message">
+
+                <button class="button-29" role="button" type="submit">Receber mais informações</button>
             </form>
-            
-            
-            
+
+
+            <script>
+                document.getElementById("form").addEventListener("submit", async function (event) {
+                    event.preventDefault();
+
+                    const formData = {
+                        name: document.querySelector("[name='name']").value,
+                        email: document.querySelector("[name='email']").value,
+                        phone: document.querySelector("[name='phone']").value,
+                        company: document.querySelector("[name='company']").value,
+                        investment: document.querySelector("[name='investment']").value,
+                        revenue: document.querySelector("[name='revenue']").value
+                    };
+
+                    const response = await fetch("/api/enviar-email", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(formData)
+                    });
+
+                    if (response.ok) {
+                        alert("Email enviado com sucesso!");
+                        window.location.href = "https://assessoriawise.com.br/obrigado.html";
+                    } else {
+                        alert("Erro ao enviar email.");
+                    }
+                });
+
+            </script>
         </div>
     </section>
     <section id="clientes" class="clientes">
@@ -141,14 +178,22 @@
         <h2>O que faremos?</h2>
         <h3>ENTENDA COMO PODEMOS AGREGAR AO SEU RESTAURANTE</h3>
         <ul>
-            <li><i class="fas fa-check-circle"></i><span class="o-que-faremos-item">Aumentar suas vendas e faturamento</span></li>
-            <li><i class="fas fa-check-circle"></i><span class="o-que-faremos-item">Entenda como podemos agregar ao seu negócio!</span></li>
-            <li><i class="fas fa-check-circle"></i><span class="o-que-faremos-item">Reduzir a dependência de terceiros para vender</span></li>
-            <li><i class="fas fa-check-circle"></i><span class="o-que-faremos-item">Atrair mais clientes e aumentar o engajamento</span></li>
-            <li><i class="fas fa-check-circle"></i><span class="o-que-faremos-item">Ações de marketing estratégico com métricas precisas</span></li>
-            <li><i class="fas fa-check-circle"></i><span class="o-que-faremos-item">Entender e melhorar seus indicadores de desempenho</span></li>
-            <li><i class="fas fa-check-circle"></i><span class="o-que-faremos-item">Acelerar o crescimento do seu negócio</span></li>
-            <li><i class="fas fa-check-circle"></i><span class="o-que-faremos-item">Tornar sua empresa uma referência no mercado</span></li>
+            <li><i class="fas fa-check-circle"></i><span class="o-que-faremos-item">Aumentar suas vendas e
+                    faturamento</span></li>
+            <li><i class="fas fa-check-circle"></i><span class="o-que-faremos-item">Entenda como podemos agregar ao seu
+                    negócio!</span></li>
+            <li><i class="fas fa-check-circle"></i><span class="o-que-faremos-item">Reduzir a dependência de terceiros
+                    para vender</span></li>
+            <li><i class="fas fa-check-circle"></i><span class="o-que-faremos-item">Atrair mais clientes e aumentar o
+                    engajamento</span></li>
+            <li><i class="fas fa-check-circle"></i><span class="o-que-faremos-item">Ações de marketing estratégico com
+                    métricas precisas</span></li>
+            <li><i class="fas fa-check-circle"></i><span class="o-que-faremos-item">Entender e melhorar seus indicadores
+                    de desempenho</span></li>
+            <li><i class="fas fa-check-circle"></i><span class="o-que-faremos-item">Acelerar o crescimento do seu
+                    negócio</span></li>
+            <li><i class="fas fa-check-circle"></i><span class="o-que-faremos-item">Tornar sua empresa uma referência no
+                    mercado</span></li>
         </ul>
         <a href="#formulario"><button class="button-29" role="button">Seja mais um case de sucesso</button></a>
     </section>
@@ -165,7 +210,7 @@
     <footer>
         <div class="footer-content">
             <img src="./assets/logo-empresa.png" alt="Logo da Empresa">
-            <a href="#top">Voltar ao topo</a>
+            <a href="#logo">Voltar ao topo</a>
             <a href="https://instagram.com/wmmkt" target="_blank">
                 <i class="fa-brands fa-instagram"></i>
             </a>
