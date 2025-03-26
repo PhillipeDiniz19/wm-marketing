@@ -14,7 +14,7 @@
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
             if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
             n.queue = []; t = b.createElement(e); t.async = !0;
@@ -77,8 +77,9 @@
                 <input type="email" name="email" placeholder="Seu melhor e-mail" required>
                 <input type="tel" name="phone" placeholder="Telefone" required>
                 <input type="text" name="company" placeholder="Nome da empresa" required>
-                <input type="text" name="investment" placeholder="Quanto você investe em marketing mensalmente?" required>
-            
+                <input type="text" name="investment" placeholder="Quanto você investe em marketing mensalmente?"
+                    required>
+
                 <select name="revenue" required>
                     <option value="" disabled selected>Qual o seu faturamento mensal?</option>
                     <option value="Até 30 mil">Até 30 mil</option>
@@ -89,14 +90,14 @@
                     <option value="De 301 mil até 500 mil">De 301 mil até 500 mil</option>
                     <option value="Mais de 500 mil">Mais de 500 mil</option>
                 </select>
-            
+
                 <button class="button-29" role="button" type="submit">Receber mais informações</button>
             </form>
-            
+
             <script>
                 document.getElementById("form").addEventListener("submit", async function (event) {
                     event.preventDefault();
-            
+
                     const formData = {
                         name: document.querySelector("[name='name']").value,
                         email: document.querySelector("[name='email']").value,
@@ -105,13 +106,14 @@
                         investment: document.querySelector("[name='investment']").value,
                         revenue: document.querySelector("[name='revenue']").value
                     };
-            
-                    const response = await fetch("/api/enviar-email", {
+
+                    const response = await fetch("https://api.assessoriawise.com.br/api/enviar-email", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify(formData)
                     });
-            
+
+
                     if (response.ok) {
                         alert("Email enviado com sucesso!");
                         window.location.href = "https://assessoriawise.com.br/obrigado.html";
@@ -120,8 +122,8 @@
                     }
                 });
             </script>
-            
-            
+
+
         </div>
     </section>
     <section id="clientes" class="clientes">
