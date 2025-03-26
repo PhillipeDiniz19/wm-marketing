@@ -72,19 +72,13 @@
                     </div>
                 </div>
             </div>
-            <form id="form" action="https://api.staticforms.xyz/submit" method="post">
-                <input type="hidden" name="accessKey" value="3ece3fa3-c37b-41ee-997a-0bdac2128113">
-                <input type="hidden" name="email">
-                <input type="hidden" name="subject" value="Novo contato do site!">
-                <input type="hidden" name="redirectTo" value="https://assessoriawise.com.br/obrigado.html">
-
+            <form id="form">
                 <input type="text" name="name" placeholder="Seu nome" required>
                 <input type="email" name="email" placeholder="Seu melhor e-mail" required>
                 <input type="tel" name="phone" placeholder="Telefone" required>
                 <input type="text" name="company" placeholder="Nome da empresa" required>
-                <input type="text" name="investment" placeholder="Quanto você investe em marketing mensalmente?"
-                    required>
-
+                <input type="text" name="investment" placeholder="Quanto você investe em marketing mensalmente?" required>
+            
                 <select name="revenue" required>
                     <option value="" disabled selected>Qual o seu faturamento mensal?</option>
                     <option value="Até 30 mil">Até 30 mil</option>
@@ -95,16 +89,14 @@
                     <option value="De 301 mil até 500 mil">De 301 mil até 500 mil</option>
                     <option value="Mais de 500 mil">Mais de 500 mil</option>
                 </select>
-                <input type="hidden" name="message" id="message">
-
+            
                 <button class="button-29" role="button" type="submit">Receber mais informações</button>
             </form>
-
-
+            
             <script>
                 document.getElementById("form").addEventListener("submit", async function (event) {
                     event.preventDefault();
-
+            
                     const formData = {
                         name: document.querySelector("[name='name']").value,
                         email: document.querySelector("[name='email']").value,
@@ -113,13 +105,13 @@
                         investment: document.querySelector("[name='investment']").value,
                         revenue: document.querySelector("[name='revenue']").value
                     };
-
+            
                     const response = await fetch("/api/enviar-email", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify(formData)
                     });
-
+            
                     if (response.ok) {
                         alert("Email enviado com sucesso!");
                         window.location.href = "https://assessoriawise.com.br/obrigado.html";
@@ -127,8 +119,9 @@
                         alert("Erro ao enviar email.");
                     }
                 });
-
             </script>
+            
+            
         </div>
     </section>
     <section id="clientes" class="clientes">

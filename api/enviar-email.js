@@ -10,16 +10,23 @@ export default async function (req, res) {
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-            user: "wmmarketing.contato@gmail.com",
-            pass: "17192022" // Use uma senha de app, não sua senha normal
+            user: "wmmarketing.contato@gmail.com", // Seu email
+            pass: "uanvrdlcjhimtlad" // Senha de app do Gmail
         }
     });
 
     const mailOptions = {
-        from: email,
-        to: "wmmarketing.contato@gmail.com",
+        from: email, // E-mail do usuário que preencheu o formulário
+        to: "wmmarketing.contato@gmail.com", // E-mail que vai receber os contatos
         subject: "Novo contato do site!",
-        text: `Nome: ${name}\nEmail: ${email}\nTelefone: ${phone}\nEmpresa: ${company}\nInvestimento: ${investment}\nFaturamento Mensal: ${revenue}`
+        text: `
+        Nome: ${name}
+        Email: ${email}
+        Telefone: ${phone}
+        Empresa: ${company}
+        Investimento em marketing: ${investment}
+        Faturamento mensal: ${revenue}
+        `
     };
 
     try {
