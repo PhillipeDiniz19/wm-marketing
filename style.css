@@ -10,7 +10,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
     font-family: 'Inter', sans-serif;
 }
 
@@ -194,6 +193,7 @@ nav button:hover {
     word-wrap: break-word;
     will-change: box-shadow, transform;
     font-size: 18px;
+    font-weight: 600;
 }
 
 .button-29:focus {
@@ -229,14 +229,6 @@ form {
 
 .formulario button {
     width: 100%;
-    color: white;
-    padding: 15px 40px;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 /* Clients Section */
@@ -345,7 +337,6 @@ form {
     text-align: left;
 }
 
-/* Footer */
 footer {
     background-color: transparent;
     padding: 40px 20px;
@@ -357,61 +348,35 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    width: 100%;
 }
 
-/* Ajuste para telas menores */
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-left {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .footer-right {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
-/* Estilos existentes */
-.footer-left {
-    display: flex;
-    gap: 30px;
-    align-content: center;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer-left img {
+.footer-content img {
     height: 50px;
 }
 
-.footer-right {
-    display: flex;
-    gap: 40px;
-    flex-direction: row;
-}
-
-.footer-right i {
-    font-size: 1.3rem;
-}
-
-
-.footer-right a {
+.footer-content a {
     color: var(--text-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.footer-right a:hover {
+.footer-content a:hover {
     color: var(--accent-color);
 }
+
+.footer-content i {
+    font-size: 1.3rem;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 20px;
+    }
+}
+
 
 
 
@@ -594,15 +559,19 @@ a {
     width: 150px;
     height: 150px;
     object-fit: contain;
-    filter: brightness(0) saturate(100%) invert(73%) sepia(88%) saturate(1095%) hue-rotate(359deg) brightness(103%) contrast(106%);
+
 }
 
-/* Botões de navegação */
-.swiper-button-next,
 .swiper-button-prev {
+    left: 0; 
     color: var(--accent-color);
-    font-size: 2rem !important;
 }
+
+.swiper-button-next {
+    right: 0; 
+    color: var(--accent-color);
+}
+
 
 /* Paginação */
 .swiper-pagination-bullet {

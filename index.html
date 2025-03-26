@@ -70,20 +70,13 @@
                     </div>
                 </div>
             </div>
-            <form id="form" action="https://api.staticforms.xyz/submit" method="post">
-                <input type="hidden" name="accessKey" value="3ece3fa3-c37b-41ee-997a-0bdac2128113">
-                <input type="hidden" name="email">
-                <input type="hidden" name="subject" value="Novo contato do site!">
-                <input type="hidden" name="redirectTo" value="https://wmmarketing.vercel.app/obrigado.html">
-
+            <form action="https://formspree.io/f/xanebgak?redirect=https://www.assessoriawise.com.br/obrigado.html" method="POST">
                 <input type="text" name="name" placeholder="Seu nome" required>
                 <input type="email" name="email" placeholder="Seu melhor e-mail" required>
-                <input type="tel" name="phone" placeholder="Telefone" required>
-                <input type="text" name="company" placeholder="Nome da empresa" required>
-                <input type="text" name="investment" placeholder="Quanto você investe em marketing mensalmente?"
-                    required>
-
-                <select name="revenue" required>
+                <input type="tel" name="Telefone" placeholder="Telefone" required>
+                <input type="text" name="Nome da empresa" placeholder="Nome da empresa" required>
+                <input type="text" name="investimento" placeholder="Quanto você investe em marketing mensalmente?" required>
+                <select name="Faturamento" required>
                     <option value="" disabled selected>Qual o seu faturamento mensal?</option>
                     <option value="Até 30 mil">Até 30 mil</option>
                     <option value="De 31 mil até 50 mil">De 31 mil até 50 mil</option>
@@ -93,31 +86,12 @@
                     <option value="De 301 mil até 500 mil">De 301 mil até 500 mil</option>
                     <option value="Mais de 500 mil">Mais de 500 mil</option>
                 </select>
-
-                <!-- Campo oculto para armazenar todos os dados personalizados -->
-                <input type="hidden" name="message" id="message">
-
-                <button class="button-29" role="button" type="submit">Receber mais informações</button>
+            
+                <button type="submit" class="button-29">Receber mais informações</button>
             </form>
-
-            <script>
-                document.getElementById("form").addEventListener("submit", function (event) {
-                    var company = document.querySelector('input[name="company"]').value;
-                    var investment = document.querySelector('input[name="investment"]').value;
-                    var revenue = document.querySelector('select[name="revenue"]').value;
-
-                    // Preenche o campo message com os dados adicionais
-                    document.getElementById("message").value = `Empresa: ${company} | Investimento: ${investment} | Faturamento: ${revenue}`;
-
-                    // Certifique-se de que a função de envio continue
-                    return true;
-                });
-            </script>
-
-
-
-
-
+            
+            
+            
         </div>
     </section>
     <section id="clientes" class="clientes">
@@ -126,22 +100,22 @@
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <figure><img src="./imagem-teste.png" alt="Cliente 1"></figure>
+                    <figure><img src="./assets/imgs-clientes/1.png" alt="Cliente 1"></figure>
                 </div>
                 <div class="swiper-slide">
-                    <figure><img src="./imagem-teste.png" alt="Cliente 2"></figure>
+                    <figure><img src="./assets/imgs-clientes/2.png" alt="Cliente 2"></figure>
                 </div>
                 <div class="swiper-slide">
-                    <figure><img src="./imagem-teste.png" alt="Cliente 3"></figure>
+                    <figure><img src="./assets/imgs-clientes/3.png" alt="Cliente 3"></figure>
                 </div>
                 <div class="swiper-slide">
-                    <figure><img src="./imagem-teste.png" alt="Cliente 4"></figure>
+                    <figure><img src="./assets/imgs-clientes/5.png" alt="Cliente 5"></figure>
                 </div>
                 <div class="swiper-slide">
-                    <figure><img src="./imagem-teste.png" alt="Cliente 5"></figure>
+                    <figure><img src="./assets/imgs-clientes/6.png" alt="Cliente 6"></figure>
                 </div>
                 <div class="swiper-slide">
-                    <figure><img src="./imagem-teste.png" alt="Cliente 6"></figure>
+                    <figure><img src="./assets/imgs-clientes/7.png" alt="Cliente 7"></figure>
                 </div>
             </div>
             <!-- Adicionando controles de navegação -->
@@ -190,25 +164,11 @@
 
     <footer>
         <div class="footer-content">
-            <div class="footer-left">
-                <a href="./logo-empresa.jpg" class="logo"></a>
-                <p>WM MKT | CNPJ: 12.345.678/0001-99</p>
-            </div>
-            <div class="footer-right">
-                <a href="#top">Voltar ao topo</a>
-                <a href="https://facebook.com/wmmkt" target="_blank">
-                    <i class="fa-brands fa-facebook"></i>
-                </a>
-
-                <a href="https://instagram.com/wmmkt" target="_blank">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-
-                <a href="https://linkedin.com/company/wmmkt" target="_blank">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-
-            </div>
+            <img src="./assets/logo-empresa.png" alt="Logo da Empresa">
+            <a href="#top">Voltar ao topo</a>
+            <a href="https://instagram.com/wmmkt" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
         </div>
     </footer>
 
