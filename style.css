@@ -289,13 +289,17 @@ form {
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
-    padding-bottom: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+    justify-items: center;
 }
 
 .videos iframe {
     width: 100%;
-    height: 250px;
+    height: 600px;
     border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
 }
 
 /* What We Do Section */
@@ -586,5 +590,17 @@ a {
 @media (max-width: 768px) {
     .swiper {
         width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .videos {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+    
+    .videos iframe {
+        height: 500px;
+        max-width: 100%;
     }
 }
